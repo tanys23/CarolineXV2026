@@ -396,17 +396,50 @@ section{position:relative;z-index:1;}
 @keyframes dotPulse{0%,80%,100%{transform:scale(0);opacity:.4;}40%{transform:scale(1);opacity:1;}}
 
 /* ─── CLOSING BANNER ─── */
-.closing-section{background:linear-gradient(160deg,#FDEEF4 0%,#FAD8E8 25%,#F5C2D8 50%,#FADADF 75%,#FDEEF4 100%);padding:clamp(3rem,8vw,5rem) clamp(1rem,5vw,1.5rem);text-align:center;}
-.closing-big{font-family:'Great Vibes',cursive;font-size:clamp(2.4rem,6.5vw,4rem);color:#5A0822;text-shadow:0 1px 10px rgba(180,80,110,.15);line-height:1.25;margin:1rem 0;}
-.closing-icons{display:flex;justify-content:center;align-items:center;gap:1.2rem;margin:2rem 0;}
-.closing-icon{width:58px;height:58px;border-radius:50%;background:rgba(255,255,255,.68);border:1px solid rgba(195,188,210,.55);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .35s;box-shadow:0 3px 14px rgba(180,100,130,.12);position:relative;}
-.closing-icon svg{width:24px;height:24px;stroke:#C97B96;fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;transition:stroke .3s;}
-.closing-icon:hover,.closing-icon.lit{background:rgba(201,123,150,.18);border-color:#C97B96;transform:scale(1.16) rotate(-4deg);}
-.closing-icon.lit svg{stroke:#7A3048;}
-.closing-icon.lit{animation:iconPop .4s cubic-bezier(.34,1.56,.64,1);}
-@keyframes iconPop{0%{transform:scale(1);}50%{transform:scale(1.28) rotate(-7deg);}100%{transform:scale(1.16) rotate(-4deg);}}
-.closing-msg{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;font-weight:500;color:#7A3848;min-height:1.5rem;transition:opacity .3s;letter-spacing:.03em;}
-.closing-heart{font-family:'Great Vibes',cursive;font-size:2.2rem;color:#C97B96;display:block;margin-top:1.6rem;}
+.closing-section{
+  background:linear-gradient(160deg,#FDEEF4 0%,#FAD8E8 25%,#F5C2D8 50%,#FADADF 75%,#FDEEF4 100%);
+  padding:clamp(4rem,10vw,6rem) clamp(1rem,5vw,2rem);
+  text-align:center;
+  position:relative;overflow:hidden;
+}
+.closing-ornament{
+  font-family:'Cormorant Garamond',serif;
+  font-size:.85rem;color:rgba(201,123,150,.5);
+  letter-spacing:.6rem;display:block;margin-bottom:1.6rem;
+}
+.closing-big{
+  font-family:'Great Vibes',cursive;
+  font-size:clamp(2.4rem,7vw,4.2rem);
+  color:#5A0822;line-height:1.25;margin:.6rem 0 1.4rem;
+  text-shadow:0 1px 12px rgba(180,80,110,.15);
+}
+.closing-rule{
+  width:clamp(60px,20vw,100px);height:1px;
+  background:linear-gradient(90deg,transparent,rgba(201,123,150,.5),transparent);
+  margin:1.4rem auto;
+}
+.closing-letter{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;font-size:clamp(1rem,2.5vw,1.12rem);
+  font-weight:400;color:#7A3848;line-height:2;
+  max-width:480px;margin:0 auto;
+}
+.closing-sig-wrap{margin-top:2rem;display:flex;flex-direction:column;align-items:center;gap:.3rem;}
+.closing-heart-line{
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:1rem;font-weight:400;color:#A06070;letter-spacing:.08em;
+}
+.closing-heart{
+  font-family:'Great Vibes',cursive;
+  font-size:clamp(2.4rem,7vw,3.2rem);
+  color:#C97B96;display:block;
+  text-shadow:0 1px 8px rgba(180,80,110,.18);
+}
+.closing-date-lbl{
+  font-family:'Cinzel',serif;font-size:clamp(.48rem,1.8vw,.58rem);
+  letter-spacing:.5em;text-transform:uppercase;
+  color:#C4879E;font-weight:700;margin-top:.4rem;
+}
 
 /* ─── ADMIN PANEL ─── */
 #adminPanel{display:none;position:fixed;inset:0;z-index:9000;background:rgba(92,31,53,.92);backdrop-filter:blur(8px);overflow-y:auto;padding:2rem 1rem;}
@@ -774,32 +807,32 @@ section{position:relative;z-index:1;}
   <section>
     <div class="closing-section">
       <div class="si c">
-        <span class="s-lbl">Un Mensaje de Caroline</span>
-        <div class="divline"><span>✦</span></div>
-        <div class="closing-big">Me hará muy feliz<br>contar contigo en este día</div>
-        <p class="s-italic">para bailar, cantar y divertirnos juntos</p>
 
-        <div class="closing-icons">
-          <!-- Dance / heels -->
-          <div class="closing-icon" onclick="closingLit(this,'bailar')" title="Bailar">
-            <svg viewBox="0 0 24 24"><path d="M12 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/><path d="M9 22l1-5-2-4 3-3 2 4h4"/><path d="M7 9l2-1 3 3-4 2"/></svg>
-          </div>
-          <!-- Microphone -->
-          <div class="closing-icon" onclick="closingLit(this,'cantar')" title="Cantar">
-            <svg viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="11" rx="3"/><path d="M5 10a7 7 0 0 0 14 0"/><path d="M12 19v3"/><path d="M8 22h8"/></svg>
-          </div>
-          <!-- Sparkle / star wand -->
-          <div class="closing-icon" onclick="closingLit(this,'divertir')" title="Divertirnos">
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/></svg>
-          </div>
-          <!-- Ribbon bow -->
-          <div class="closing-icon" onclick="closingLit(this,'amor')" title="Con amor">
-            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-          </div>
+        <div class="closing-ornament">✦ &nbsp; ✦ &nbsp; ✦</div>
+
+        <div class="closing-big">Gracias por ser parte<br>de este día tan especial</div>
+
+        <div class="closing-rule"></div>
+
+        <p class="closing-letter">
+          Cada uno de ustedes tiene un lugar muy especial en mi corazón.<br>
+          Su presencia, su amor y su alegría hacen que esta noche<br>
+          sea el sueño más bonito que jamás imaginé.
+        </p>
+
+        <p class="closing-letter" style="margin-top:1.2rem;">
+          Gracias por crecer conmigo, por acompañarme,<br>
+          y por celebrar este nuevo capítulo de mi vida.
+        </p>
+
+        <div class="closing-rule"></div>
+
+        <div class="closing-sig-wrap">
+          <div class="closing-heart-line">Con todo mi amor,</div>
+          <span class="closing-heart">Caroline Torres</span>
+          <div class="closing-date-lbl">8 de Agosto · 2026</div>
         </div>
 
-        <div class="closing-msg" id="closingMsg">Toca un ícono para responder a Caroline</div>
-        <span class="closing-heart">Caroline ♡</span>
       </div>
     </div>
   </section>
@@ -1130,23 +1163,7 @@ function tlToggle(el){
 }
 
 // ── CLOSING ICONS ──
-const closingMsgs={
-  bailar:'¡Caroline te guardará el primer baile de la noche! ✨',
-  cantar:'¡Juntos cantaremos hasta que la música nos lleve! ✨',
-  divertir:'¡Será una noche que jamás olvidaremos juntos! ✨',
-  amor:'Caroline te envía todo su cariño y gratitud ✨'
-};
-function closingLit(el,key){
-  document.querySelectorAll('.closing-icon').forEach(i=>{
-    i.classList.remove('lit');
-    i.style.background='rgba(255,255,255,.62)';
-    i.style.transform='';
-  });
-  el.classList.add('lit');
-  const m=document.getElementById('closingMsg');
-  m.style.opacity='0';
-  setTimeout(()=>{m.textContent=closingMsgs[key];m.style.opacity='1';},200);
-}
+// ── CLOSING (static thank-you, no JS needed) ──
 
 // ── ADMIN PANEL ──
 if(window.location.search.includes('admin=true')){
